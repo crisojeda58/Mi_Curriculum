@@ -1,4 +1,4 @@
 import { config } from 'dotenv';
 config();
 
-import '@/ai/flows/resume-tailor.ts';
+// Removed import for resume-tailor.ts

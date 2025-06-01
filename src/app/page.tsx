@@ -4,7 +4,6 @@ import HeroSection from '@/components/sections/HeroSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
 import EducationSection from '@/components/sections/EducationSection';
 import SkillsSection from '@/components/sections/SkillsSection';
-import ResumeTailorSection from '@/components/sections/ResumeTailorSection';
 import ContactSection from '@/components/sections/ContactSection';
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
         <ProjectsSection id="projects" />
         <EducationSection id="education" />
         <SkillsSection id="skills" />
-        <ResumeTailorSection id="resume-tailor" />
         <ContactSection id="contact" />
       </main>
       <Footer />

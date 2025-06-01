@@ -20,9 +20,6 @@ const Footer = () => {
         <p className="text-sm">
           &copy; {new Date().getFullYear()} {personalInfo.name}. Todos los derechos reservados.
         </p>
-        <p className="text-xs mt-1">
-          Diseñado con ❤️ y código.
-        </p>
       </div>
     </footer>
   );

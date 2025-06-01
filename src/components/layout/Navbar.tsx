@@ -9,14 +9,14 @@ const Navbar = () => {
       <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
           <Code2 className="h-7 w-7 text-primary" />
-          <span className="font-bold text-xl text-foreground">CodeCanvas CV</span>
+          <span className="font-bold text-xl text-foreground">Portafolio</span>
         </Link>
         <nav className="hidden md:flex items-center space-x-6">
           {navigationLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              className="text-m font-medium transition-colors hover:text-primary"
             >
               {link.label}
             </Link>

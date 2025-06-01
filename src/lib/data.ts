@@ -2,14 +2,14 @@ import type { PersonalInfo, Project, Education, Skill } from './types';
 import { Laptop, Briefcase, GraduationCap, Code, Server, Database, Cog, Linkedin, Github, Mail, FileText, ExternalLink, BarChartBig, Users, Paintbrush, Gamepad2 } from 'lucide-react';
 
 export const personalInfo: PersonalInfo = {
-  name: 'Tu Nombre Aquí',
-  title: 'Estudiante de Informática | Desarrollador Web Aspirante',
+  name: 'Cristian Ojeda',
+  title: 'Estudiante Ingeniería Informática, Técnico en Enfermería Nivel Superior, Entrenador de Voleibol.',
   bio: 'Soy un apasionado estudiante de informática con un fuerte interés en el desarrollo web full-stack y las nuevas tecnologías. Siempre estoy buscando aprender y aplicar mis conocimientos en proyectos desafiantes. Mi objetivo es convertirme en un desarrollador de software competente y creativo.',
-  email: 'tu.email@example.com',
-  linkedinUrl: 'https://linkedin.com/in/tu-perfil',
-  githubUrl: 'https://github.com/tu-usuario',
+  email: 'cris.ojeda.co@gmail.com',
+  linkedinUrl: 'https://www.linkedin.com/in/cristian-ojeda-0ba76b326/',
+  githubUrl: 'https://github.com/crisojeda58',
   cvUrl: '/CV_TuNombre.pdf', // User should place their CV here
-  profileImageUrl: 'https://placehold.co/300x300.png',
+  profileImageUrl: '/src/images/perfil.jpg',
   profileImageDataAiHint: 'profile student',
 };
 
@@ -47,11 +47,11 @@ export const projects: Project[] = [
 export const education: Education[] = [
   {
     id: '1',
-    institution: 'Nombre de tu Universidad/Instituto',
-    degree: 'Grado en Ingeniería Informática (o similar)',
-    startDate: 'Septiembre 2020',
+    institution: 'Instituto Profesional Santo Tomas',
+    degree: 'Grado Ingeniero Informático',
+    startDate: 'Enero 2022',
     endDate: 'Presente',
-    description: 'Cursando asignaturas como Estructuras de Datos, Algoritmos, Desarrollo Web, Bases de Datos, Sistemas Operativos. Participación en proyectos académicos y actividades extracurriculares.',
+    description: 'Cursando asignaturas como Bases de Datos, Algoritmos, Desarrollo Web, Arquitectura de Software, Sistemas Operativos, Programacion Android, Ethical Hacking, entre otras.',
   },
   {
     id: '2',
@@ -79,10 +79,9 @@ export const skills: Skill[] = [
 ];
 
 export const navigationLinks = [
-  { href: '#bio', label: 'Bio' },
+  { href: '#bio', label: 'Biografia' },
   { href: '#projects', label: 'Proyectos' },
   { href: '#education', label: 'Educación' },
   { href: '#skills', label: 'Habilidades' },
-  { href: '#resume-tailor', label: 'Adaptador de CV' },
-  { href: '#contact', label: 'Contacto' },
+  { href: '#contact', label: 'Contactar' },
 ];

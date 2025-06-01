@@ -11,7 +11,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ id }) => {
   return (
     <section id={id} className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle icon={GraduationCap} title="Formación Académica" subtitle="Mi trayectoria educativa y certificaciones relevantes." />
+        <SectionTitle icon={GraduationCap} title="Formación Académica" subtitle="Grados y certificaciones." />
         <div className="space-y-8">
           {education.map((edu) => (
             <Card key={edu.id} className="shadow-md hover:shadow-lg transition-shadow duration-300">
