@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Download, Code2 } from 'lucide-react';
+import { Download, BookText } from 'lucide-react';
 import { navigationLinks, personalInfo } from '@/lib/data';
 
 const Navbar = () => {
@@ -8,8 +8,8 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
-          <Code2 className="h-7 w-7 text-primary" />
-          <span className="font-bold text-xl text-foreground">Portafolio</span>
+          <BookText className="h-7 w-7 text-primary" />
+          <span className="font-bold text-xl text-foreground">CV Cristian Ojeda</span>
         </Link>
         <nav className="hidden md:flex items-center space-x-6">
           {navigationLinks.map((link) => (
