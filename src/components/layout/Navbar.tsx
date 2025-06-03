@@ -1,7 +1,9 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Download, BookText } from 'lucide-react';
 import { navigationLinks, personalInfo } from '@/lib/data';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const Navbar = () => {
   return (
@@ -29,7 +31,7 @@ const Navbar = () => {
               Descargar CV
             </a>
           </Button>
-          {/* Mobile menu button can be added here if needed */}
+          <ThemeToggle />
         </div>
       </div>
     </header>
