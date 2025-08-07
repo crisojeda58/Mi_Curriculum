@@ -21,7 +21,7 @@ export const projects: Project[] = [
     imageUrl: '/images/PortafolioWeb.png',
     dataAiHint: 'portfolio website',
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Firebase'],
-    githubUrl: 'https://github.com/tu-usuario/mi-portafolio',
+    githubUrl: 'https://github.com/crisojeda58/Mi_CV',
     liveUrl: '#',
   },
   {
