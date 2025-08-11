@@ -85,23 +85,39 @@ export const education: Education[] = [
     endDate: 'Septiembre 2024',
     description: 'Curso de 8 horas, introduccion al hackin etico, Deteccion de vulnerabilidades, uso de herramientas como Nmap, WSPscan, Metasploit, Gobuster, entre otros',
   },
+  {
+    id: '6',
+    institution: 'Santander Open Academy - Microsoft',
+    degree: 'Curso Introducción a la inteligencia artificial con Mocrosoft Copilot',
+    startDate: '',
+    endDate: 'Septiembre 2024',
+    description: 'Curso de 8 horas, introduccion al Inteligencia Artificial, Uso de tokens, automatizacion, integracion de Copilot en Microsoft Office',
+  },
+  {
+    id: '7',
+    institution: 'EmpowerData Latam',
+    degree: 'Curso Introducción y uso practico de PowerBi',
+    startDate: '',
+    endDate: 'Marzo 2025',
+    description: 'Curso de 8 horas, introduccion al hackin etico, Deteccion de vulnerabilidades, uso de herramientas como Nmap, WSPscan, Metasploit, Gobuster, entre otros',
+  },
 ];
 
 export const skills: Skill[] = [
   { id: '1', name: 'Python', proficiency: 60, icon: Code },
-  { id: '2', name: 'Kali-Linux', proficiency: 70, icon: Computer },
-  { id: '3', name: 'Git & GitHub', proficiency: 90, icon: Github },
+  { id: '2', name: 'Kali-Linux', proficiency: 60, icon: Computer },
+  { id: '3', name: 'Git & GitHub', proficiency: 80, icon: Github },
   { id: '4', name: 'C#', proficiency: 50, icon: Code },
   { id: '5', name: 'Java', proficiency: 50, icon: Code },
   { id: '6', name: 'Golang', proficiency: 20, icon: Code },
   { id: '7', name: 'Firebase', proficiency: 60, icon: DraftingCompass },	
-  { id: '8', name: 'Flutter', proficiency: 60, icon: DraftingCompass },
+  { id: '8', name: 'Flutter', proficiency: 50, icon: DraftingCompass },
   { id: '7', name: 'SQL (PostgreSQL, MySQL)', proficiency: 80, icon: Database },
-  { id: '8', name: 'TypeScript', proficiency: 50, icon: Code },
+  { id: '8', name: 'TypeScript', proficiency: 45, icon: Code },
   { id: '9', name: 'JavaScript', proficiency: 40, icon: Code },
   { id: '10', name: 'React', proficiency: 30, icon: Code },
-  { id: '11', name: 'HTML5', proficiency: 90, icon: Code },
-  { id: '12', name: 'CSS3, Bootstrap, Tailwind', proficiency: 85, icon: Paintbrush },
+  { id: '11', name: 'HTML5', proficiency: 80, icon: Code },
+  { id: '12', name: 'CSS3, Bootstrap, Tailwind', proficiency: 80, icon: Paintbrush },
 ];
 
 export const navigationLinks = [
