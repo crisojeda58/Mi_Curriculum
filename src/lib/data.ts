@@ -1,5 +1,5 @@
 import type { PersonalInfo, Project, Education, Skill } from './types';
-import { Laptop, Briefcase, GraduationCap, Code, DraftingCompass,  Server, Database, Cog, Linkedin, Github, Mail, FileText, ExternalLink, BarChartBig, Users, Paintbrush, Gamepad2, Computer } from 'lucide-react';
+import { Laptop, Briefcase, GraduationCap, Code, DraftingCompass,  Server, Database, Cog, Linkedin, Github, Mail, FileText, ExternalLink, BarChartBig, Users, Paintbrush, Gamepad2, Computer, Award } from 'lucide-react';
 
 export const personalInfo: PersonalInfo = {
   name: 'Cristian Ojeda',
@@ -61,6 +61,9 @@ export const education: Education[] = [
     endDate: 'Diciembre 2018',
     description: 'Cursando asignaturas como Biología, Química, Anatomia, Biquimica, Bioestadistica, Fisilogia, Microbiologia, Física, entre otros.',
   },
+];
+
+export const certificates: Education[] = [
   {
     id: '3',
     institution: 'Santander Open Academy - MIT Professional Education',
@@ -103,6 +106,7 @@ export const education: Education[] = [
   },
 ];
 
+
 export const skills: Skill[] = [
   { id: '1', name: 'Python', proficiency: 60, icon: Code },
   { id: '2', name: 'Kali-Linux', proficiency: 60, icon: Computer },
@@ -124,6 +128,7 @@ export const navigationLinks = [
   { href: '#bio', label: 'Biografia' },
   { href: '#projects', label: 'Proyectos' },
   { href: '#education', label: 'Educación' },
+  { href: '#certificates', label: 'Certificados' },
   { href: '#skills', label: 'Habilidades' },
   { href: '#contact', label: 'Contactar' },
 ];
