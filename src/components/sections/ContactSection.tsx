@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
-import { useFormState, useFormStatus } from 'react-dom';
+import { useEffect, useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -45,7 +45,7 @@ function SubmitButton() {
 
 
 const ContactSection: React.FC<{ id: string }> = ({ id }) => {
-  const [formState, formAction] = useFormState(handleSendMessage, initialState);
+  const [formState, formAction] = useActionState(handleSendMessage, initialState);
   const { toast } = useToast();
   
   const form = useForm<ContactFormData>({
@@ -127,15 +127,15 @@ const ContactSection: React.FC<{ id: string }> = ({ id }) => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel htmlFor="message">Mensaje</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          id="message"
-                          placeholder="Escribe tu mensaje aquí..."
-                          rows={5}
-                          {...field}
-                          disabled={pending}
-                        />
-                      </FormControl>
+      <FormControl>
+        <Textarea
+          id="message"
+          placeholder="Escribe tu mensaje aquí..."
+          rows={5}
+          {...field}
+          disabled={pending}
+        />
+      </FormControl>
                       <FormMessage>{formState?.fieldErrors?.message?.join(', ')}</FormMessage>
                     </FormItem>
                   )}
