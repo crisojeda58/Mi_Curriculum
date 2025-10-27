@@ -13,6 +13,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow">
         <HeroSection id="bio" />
+        <ProjectsSection id="projects" />
         <EducationSection id="education" />
         <CertificatesSection id="certificates" />
         <SkillsSection id="skills" />
