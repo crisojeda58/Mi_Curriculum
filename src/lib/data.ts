@@ -1,5 +1,5 @@
 import type { PersonalInfo, Project, Education, Skill } from './types';
-import { Laptop, Briefcase, GraduationCap, Code, DraftingCompass,  Server, Database, Cog, Linkedin, Github, Mail, FileText, ExternalLink, BarChartBig, Users, Paintbrush, Gamepad2, Computer } from 'lucide-react';
+import { Laptop, Briefcase, GraduationCap, Code, DraftingCompass,  Server, Database, Cog, Linkedin, Github, Mail, FileText, ExternalLink, BarChartBig, Users, Paintbrush, Gamepad2, Computer, Award } from 'lucide-react';
 
 export const personalInfo: PersonalInfo = {
   name: 'Cristian Ojeda',
@@ -61,6 +61,9 @@ export const education: Education[] = [
     endDate: 'Diciembre 2018',
     description: 'Cursando asignaturas como Biología, Química, Anatomia, Biquimica, Bioestadistica, Fisilogia, Microbiologia, Física, entre otros.',
   },
+];
+
+export const certificates: Education[] = [
   {
     id: '3',
     institution: 'Santander Open Academy - MIT Professional Education',
@@ -103,6 +106,7 @@ export const education: Education[] = [
   },
 ];
 
+
 export const skills: Skill[] = [
   { id: '1', name: 'Python', proficiency: 60, icon: Code },
   { id: '2', name: 'Kali-Linux', proficiency: 60, icon: Computer },
@@ -110,20 +114,21 @@ export const skills: Skill[] = [
   { id: '4', name: 'C#', proficiency: 50, icon: Code },
   { id: '5', name: 'Java', proficiency: 50, icon: Code },
   { id: '6', name: 'Golang', proficiency: 20, icon: Code },
-  { id: '7', name: 'Firebase', proficiency: 60, icon: DraftingCompass },	
+  { id: '7', name: 'Firebase', proficiency: 60, icon: DraftingCompass },
   { id: '8', name: 'Flutter', proficiency: 50, icon: DraftingCompass },
-  { id: '7', name: 'SQL (PostgreSQL, MySQL)', proficiency: 80, icon: Database },
-  { id: '8', name: 'TypeScript', proficiency: 45, icon: Code },
-  { id: '9', name: 'JavaScript', proficiency: 40, icon: Code },
-  { id: '10', name: 'React', proficiency: 30, icon: Code },
-  { id: '11', name: 'HTML5', proficiency: 80, icon: Code },
-  { id: '12', name: 'CSS3, Bootstrap, Tailwind', proficiency: 80, icon: Paintbrush },
+  { id: '9', name: 'SQL (PostgreSQL, MySQL)', proficiency: 80, icon: Database },
+  { id: '10', name: 'TypeScript', proficiency: 45, icon: Code },
+  { id: '11', name: 'JavaScript', proficiency: 40, icon: Code },
+  { id: '12', name: 'React', proficiency: 30, icon: Code },
+  { id: '13', name: 'HTML5', proficiency: 80, icon: Code },
+  { id: '14', name: 'CSS3, Bootstrap, Tailwind', proficiency: 80, icon: Paintbrush },
 ];
 
 export const navigationLinks = [
   { href: '#bio', label: 'Biografia' },
   { href: '#projects', label: 'Proyectos' },
   { href: '#education', label: 'Educación' },
+  { href: '#certificates', label: 'Certificados' },
   { href: '#skills', label: 'Habilidades' },
   { href: '#contact', label: 'Contactar' },
 ];
