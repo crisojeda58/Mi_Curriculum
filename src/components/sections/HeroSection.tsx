@@ -48,9 +48,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
                 src={personalInfo.profileImageUrl}
                 alt={personalInfo.name}
                 data-ai-hint={personalInfo.profileImageDataAiHint}
-                layout="fill"
-                objectFit="cover"
-                className="transform hover:scale-105 transition-transform duration-300"
+                fill
+                className="object-cover transform hover:scale-105 transition-transform duration-300"
               />
             </div>
           </div>

@@ -2,32 +2,53 @@ import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { projects } from '@/lib/data';
+import { createClient } from '@/lib/supabase/server';
 import { Github, ExternalLink, Briefcase } from 'lucide-react';
 import Link from 'next/link';
 import SectionTitle from './SectionTitle';
+import type { Project } from '@/lib/types';
 
 interface ProjectsSectionProps {
   id: string;
 }
 
-const ProjectsSection: React.FC<ProjectsSectionProps> = ({ id }) => {
+const ProjectsSection: React.FC<ProjectsSectionProps> = async ({ id }) => {
+  const supabase = createClient();
+  const { data: projects, error } = await supabase.from('projects').select('*').order('id');
+
+  if (error) {
+    console.error('Error fetching projects data:', error);
+  }
+
+  if (!projects || projects.length === 0) {
+    return (
+      <section id={id} className="py-16 md:py-24 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle icon={Briefcase} title="Proyectos Destacados" subtitle="Una selección de proyectos en los que he trabajado, demostrando mis habilidades y pasión por el desarrollo." />
+          <p>No se pudieron cargar los proyectos.</p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id={id} className="py-16 md:py-24 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle icon={Briefcase} title="Proyectos Destacados" subtitle="Una selección de proyectos en los que he trabajado, demostrando mis habilidades y pasión por el desarrollo." />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {(projects as Project[]).map((project) => (
             <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="relative w-full h-48">
-                <Image
-                  src={project.imageUrl}
-                  alt={project.title}
-                  data-ai-hint={project.dataAiHint}
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
+              {project.image_url && (
+                <div className="relative w-full h-48">
+                  <Image
+                    src={project.image_url}
+                    alt={project.title}
+                    data-ai-hint={project.dataAiHint}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+              )}
               <CardHeader>
                 <CardTitle className="text-xl">{project.title}</CardTitle>
               </CardHeader>

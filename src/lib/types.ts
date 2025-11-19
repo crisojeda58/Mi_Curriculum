@@ -2,7 +2,7 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  imageUrl: string;
+  image_url: string;
   dataAiHint?: string;
   technologies: string[];
   githubUrl?: string;
@@ -13,8 +13,8 @@ export interface Education {
   id: string;
   institution: string;
   degree: string;
-  startDate: string;
-  endDate: string;
+  start_date: string;
+  end_date: string;
   description?: string;
 }
 
@@ -35,4 +35,13 @@ export interface PersonalInfo {
   cvUrl: string;
   profileImageUrl: string;
   profileImageDataAiHint?: string;
+}
+
+export interface Certificate {
+  id: number;
+  title: string;
+  institution: string;
+  issue_date: string;
+  certificate_url: string;
+  description: string;
 }
