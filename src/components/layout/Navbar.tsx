@@ -2,7 +2,8 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Download, BookText } from 'lucide-react';
-import { navigationLinks, personalInfo } from '@/lib/data';
+import { navigationLinks } from '@/lib/navigation';
+import { personalInfo } from '@/lib/data';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
 const Navbar = () => {
