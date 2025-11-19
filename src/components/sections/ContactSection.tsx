@@ -127,15 +127,15 @@ const ContactSection: React.FC<{ id: string }> = ({ id }) => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel htmlFor="message">Mensaje</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          id="message"
-                          placeholder="Escribe tu mensaje aquí..."
-                          rows={5}
-                          {...field}
-                          disabled={pending}
-                        />
-                      </FormControl>
+      <FormControl>
+        <Textarea
+          id="message"
+          placeholder="Escribe tu mensaje aquí..."
+          rows={5}
+          {...field}
+          disabled={pending}
+        />
+      </FormControl>
                       <FormMessage>{formState?.fieldErrors?.message?.join(', ')}</FormMessage>
                     </FormItem>
                   )}

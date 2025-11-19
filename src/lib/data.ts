@@ -15,8 +15,8 @@ export const personalInfo: PersonalInfo = {
 
 export const skills: Skill[] = [
   { id: '1', name: 'Python', proficiency: 60, icon: Code },
-  { id: '2', name: 'Kali-Linux', proficiency: 70, icon: Computer },
-  { id: '3', name: 'Git & GitHub', proficiency: 90, icon: Github },
+  { id: '2', name: 'Kali-Linux', proficiency: 60, icon: Computer },
+  { id: '3', name: 'Git & GitHub', proficiency: 80, icon: Github },
   { id: '4', name: 'C#', proficiency: 50, icon: Code },
   { id: '5', name: 'Java', proficiency: 50, icon: Code },
   { id: '6', name: 'Golang', proficiency: 20, icon: Code },
