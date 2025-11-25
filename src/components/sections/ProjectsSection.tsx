@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { createClient } from '@/lib/supabase/server';
-import { Github, ExternalLink, Briefcase } from 'lucide-react';
+import { ExternalLink, Briefcase } from 'lucide-react';
 import Link from 'next/link';
 import SectionTitle from './SectionTitle';
 import type { Project } from '@/lib/types';
@@ -37,46 +37,46 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = async ({ id }) => {
         <SectionTitle icon={Briefcase} title="Proyectos Destacados" subtitle="Una selección de proyectos en los que he trabajado, demostrando mis habilidades y pasión por el desarrollo." />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {(projects as Project[]).map((project) => (
-            <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              {project.image_url && (
-                <div className="relative w-full h-48">
-                  <Image
-                    src={project.image_url}
-                    alt={project.title}
-                    data-ai-hint={project.dataAiHint}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                  />
-                </div>
-              )}
-              <CardHeader>
-                <CardTitle className="text-xl">{project.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <CardDescription className="mb-4 text-sm">{project.description}</CardDescription>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <Badge key={tech} variant="secondary">{tech}</Badge>
-                  ))}
-                </div>
-              </CardContent>
-              <CardFooter className="flex justify-end space-x-2">
-                {project.githubUrl && (
-                  <Button variant="outline" size="sm" asChild>
-                    <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" /> GitHub
-                    </Link>
-                  </Button>
+            <Link href={project.github_url || '#'} key={project.id} target="_blank" rel="noopener noreferrer" className="block">
+              <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
+                {project.image_url && (
+                  <div className="relative w-full h-48">
+                    <Image
+                      src={project.image_url}
+                      alt={project.title}
+                      data-ai-hint={project.data_ai_hint}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
                 )}
-                {project.liveUrl && project.liveUrl !== '#' && (
-                  <Button variant="default" size="sm" asChild>
-                    <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" /> Demo
-                    </Link>
-                  </Button>
-                )}
-              </CardFooter>
-            </Card>
+                <CardHeader>
+                  <CardTitle className="text-xl">{project.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <CardDescription className="mb-4 text-sm">{project.description}</CardDescription>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech) => (
+                      <Badge key={tech} variant="secondary">{tech}</Badge>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter className="flex justify-end space-x-2">
+                  {project.live_url && project.live_url !== '#' && (
+                    <Button variant="default" size="sm" asChild>
+                      <Link
+                        href={project.live_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" /> Demo
+                      </Link>
+                    </Button>
+                  )}
+                </CardFooter>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
