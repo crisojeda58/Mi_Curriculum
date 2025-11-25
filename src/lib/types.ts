@@ -3,10 +3,10 @@ export interface Project {
   title: string;
   description: string;
   image_url: string;
-  dataAiHint?: string;
+  data_ai_hint?: string;
   technologies: string[];
-  githubUrl?: string;
-  liveUrl?: string;
+  github_url?: string;
+  live_url?: string;
 }
 
 export interface Education {
