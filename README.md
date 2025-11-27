@@ -71,5 +71,3 @@ Si deseas ejecutar este proyecto en tu entorno local para desarrollo o pruebas:
 - **GitHub:** [@crisojeda58](https://github.com/crisojeda58)
 
 ---
-
-_Desarrollado con pasión y código por Cristian Ojeda._
