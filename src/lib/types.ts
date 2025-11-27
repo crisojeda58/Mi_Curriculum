@@ -19,10 +19,11 @@ export interface Education {
 }
 
 export interface Skill {
-  id: string;
+  id: string | number;
   name: string;
   proficiency: number; // 0-100
   icon?: React.ElementType;
+  icon_name?: string; // For Supabase
 }
 
 export interface PersonalInfo {

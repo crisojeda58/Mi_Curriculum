@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   description: 'Portafolio y CV web de un estudiante de informática.',
 };
 
+import { SpotlightBackground } from "@/components/ui/spotlight-background";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <SpotlightBackground />
         {children}
         <Toaster />
       </body>
