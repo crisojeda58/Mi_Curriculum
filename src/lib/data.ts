@@ -26,6 +26,6 @@ export const skills: Skill[] = [
   { id: '10', name: 'TypeScript', proficiency: 50, icon: Code },
   { id: '11', name: 'JavaScript', proficiency: 40, icon: Code },
   { id: '12', name: 'React', proficiency: 30, icon: Code },
-  { id: '13', 'name': 'HTML5', 'proficiency': 90, 'icon': Code },
+  { id: '13', name: 'HTML5', proficiency: 90, icon: Code },
   { id: '14', name: 'CSS3, Bootstrap, Tailwind', proficiency: 85, icon: Paintbrush },
 ];

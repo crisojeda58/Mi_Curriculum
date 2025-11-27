@@ -13,7 +13,7 @@ interface ProjectsSectionProps {
 }
 
 const ProjectsSection: React.FC<ProjectsSectionProps> = async ({ id }) => {
-  const supabase = createClient();
+  const supabase = await createClient();
   const { data: projects, error } = await supabase.from('projects').select('*').order('id');
 
   if (error) {
