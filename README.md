@@ -1,51 +1,75 @@
-# Portafolio Personal con Next.js y Firebase
+# 🚀 Portafolio Personal - Cristian Ojeda
 
-Este es un proyecto de Next.js iniciado con `create-next-app` e integrado con Firebase. Sirve como un portafolio personal para mostrar mis proyectos, habilidades y experiencia.
+Bienvenido a mi portafolio profesional, una aplicación web moderna y dinámica diseñada para mostrar mi trayectoria, proyectos y habilidades como desarrollador. Este proyecto destaca por su diseño limpio, interactividad y uso de tecnologías de vanguardia.
 
-## Sobre este proyecto
+🔗 **Demo en vivo:** [https://portafolio-tawny-phi-27.vercel.app/](https://portafolio-tawny-phi-27.vercel.app/)
 
-Este sitio web es mi portafolio personal como desarrollador. Aquí puedes encontrar información sobre mí, los proyectos en los que he trabajado y mi experiencia profesional. El objetivo es que sirva como una carta de presentación interactiva para reclutadores y entusiastas de la tecnología.
+## ✨ Características Principales
 
-**Autor:** Cristian Ojeda
-**GitHub:** [https://github.com/crisojeda58](https://github.com/crisojeda58)
-**LinkedIn:** [https://www.linkedin.com/in/cristian-ojeda-0ba76b326/](https://www.linkedin.com/in/cristian-ojeda-0ba76b326/)
+- **Diseño Moderno y Responsivo:** Interfaz construida con **Next.js 15** y **Tailwind CSS**, adaptada perfectamente a cualquier dispositivo.
+- **Componentes UI Premium:** Implementación de **Shadcn UI** y **Radix UI** para ofrecer componentes accesibles, consistentes y elegantes.
+- **Backend Híbrido & Potente:** Integración robusta con **Firebase** y **Supabase** para una gestión eficiente de datos, autenticación y almacenamiento.
+- **Inteligencia Artificial:** Funcionalidades potenciadas por **Genkit** de Google, explorando el futuro del desarrollo web con IA.
+- **Performance Optimizado:** Uso de las últimas características de React 19 y Next.js para una carga rápida y SEO amigable.
 
-## Cómo empezar
+## 🛠️ Stack Tecnológico
 
-Si quieres ejecutar este proyecto en tu máquina local, puedes seguir estos pasos.
+Este proyecto utiliza una arquitectura moderna basada en:
 
-Primero, clona el repositorio e instala las dependencias:
+- **Frontend:** [Next.js 15](https://nextjs.org/) (App Router), [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/).
+- **Estilos:** [Tailwind CSS](https://tailwindcss.com/), [Shadcn UI](https://ui.shadcn.com/), [Lucide React](https://lucide.dev/) (Iconos).
+- **Backend & Servicios:**
+  - [Firebase](https://firebase.google.com/): Configuración base y servicios en la nube.
+  - [Supabase](https://supabase.com/): Base de datos PostgreSQL y autenticación.
+- **AI:** [Genkit](https://firebase.google.com/docs/genkit): SDK de IA para desarrolladores.
+- **Despliegue:** [Vercel](https://vercel.com/): Hosting y CI/CD automatizado.
 
-```bash
-git clone https://github.com/crisojeda58/portfolio-nextjs-firebase.git
-cd portfolio-nextjs-firebase
-npm install
-```
+## 🚀 Cómo empezar localmente
 
-Luego, ejecuta el servidor de desarrollo:
+Si deseas ejecutar este proyecto en tu entorno local para desarrollo o pruebas:
 
-```bash
-npm run dev
-# o
-yarn dev
-# o
-pnpm dev
-```
+1.  **Clonar el repositorio:**
 
-Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
+    ```bash
+    git clone https://github.com/crisojeda58/Mi_Curriculum.git
+    cd Mi_Curriculum
+    ```
 
-## Scripts disponibles
+2.  **Instalar dependencias:**
 
-En el directorio del proyecto, puedes ejecutar los siguientes comandos:
+    ```bash
+    npm install
+    ```
 
-### `npm run dev`
+3.  **Configurar variables de entorno:**
+    Necesitarás crear un archivo `.env.local` en la raíz del proyecto con las credenciales de tus servicios (Supabase/Firebase).
 
-Ejecuta la aplicación en modo de desarrollo. La página se recargará automáticamente si haces cambios en el código.
+    ```env
+    NEXT_PUBLIC_SUPABASE_URL=tu_supabase_url
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_supabase_anon_key
+    # ... Agrega aquí tus otras claves de Firebase si son necesarias
+    ```
 
-### `npm run build`
+4.  **Ejecutar el servidor de desarrollo:**
+    ```bash
+    npm run dev
+    ```
+    Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
 
-Construye la aplicación para producción en la carpeta `.next`. Este comando optimiza la aplicación para el mejor rendimiento.
+## 📂 Estructura del Proyecto
 
-### `npm run start`
+- `src/app`: Contiene las rutas, páginas y layouts (App Router).
+- `src/components`: Biblioteca de componentes reutilizables y secciones de la página.
+- `src/lib`: Utilidades, tipos y configuraciones de clientes (Firebase/Supabase).
+- `src/ai`: Lógica e integraciones relacionadas con Genkit AI.
 
-Inicia un servidor de producción con la versión construida de la aplicación.
+## 📬 Contacto
+
+¿Te interesa mi perfil o quieres colaborar en algún proyecto? ¡Contáctame!
+
+- **LinkedIn:** [Cristian Ojeda](https://www.linkedin.com/in/cristian-ojeda-0ba76b326/)
+- **GitHub:** [@crisojeda58](https://github.com/crisojeda58)
+
+---
+
+_Desarrollado con pasión y código por Cristian Ojeda._
