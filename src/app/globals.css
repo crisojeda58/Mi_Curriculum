@@ -8,92 +8,92 @@ body {
 
 @layer base {
   :root {
-    --background: 270 100% 97%; /* Very Light Lilac */
-    --foreground: 270 70% 25%; /* Dark Purple */
+    --background: 210 100% 97%; /* Very Light Blue */
+    --foreground: 210 70% 25%; /* Dark Blue */
 
-    --card: 270 80% 99%; /* Almost white with a hint of lilac */
-    --card-foreground: 270 70% 25%;
+    --card: 210 80% 99%; /* Almost white with a hint of blue */
+    --card-foreground: 210 70% 25%;
 
-    --popover: 270 80% 99%;
-    --popover-foreground: 270 70% 25%;
+    --popover: 210 80% 99%;
+    --popover-foreground: 210 70% 25%;
 
-    --primary: 270 90% 60%; /* Vibrant Lilac/Purple */
-    --primary-foreground: 270 100% 98%; /* Light color for text on primary */
+    --primary: 210 90% 60%; /* Vibrant Blue */
+    --primary-foreground: 210 100% 98%; /* Light color for text on primary */
 
-    --secondary: 270 90% 90%; /* Lighter Lilac */
-    --secondary-foreground: 270 80% 40%; /* Darker purple text on secondary */
+    --secondary: 210 90% 90%; /* Lighter Blue */
+    --secondary-foreground: 210 80% 40%; /* Darker blue text on secondary */
 
-    --muted: 270 70% 94%; /* Light, desaturated lilac */
-    --muted-foreground: 270 50% 45%; /* Medium desaturated purple for text */
+    --muted: 210 70% 94%; /* Light, desaturated blue */
+    --muted-foreground: 210 50% 45%; /* Medium desaturated blue for text */
 
-    --accent: 280 90% 65%; /* Bright Violet */
-    --accent-foreground: 280 100% 98%; /* Light color for text on accent */
+    --accent: 220 90% 65%; /* Bright Indigo/Blue */
+    --accent-foreground: 220 100% 98%; /* Light color for text on accent */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 270 60% 88%; /* Light purple-gray border */
-    --input: 270 70% 96%; /* Very light purple for input backgrounds */
-    --ring: 270 90% 65%; /* Purple for focus rings */
+    --border: 210 60% 88%; /* Light blue-gray border */
+    --input: 210 70% 96%; /* Very light blue for input backgrounds */
+    --ring: 210 90% 65%; /* Blue for focus rings */
 
     --radius: 0.5rem;
 
     /* Chart colors */
-    --chart-1: 270 76% 61%;
-    --chart-2: 280 58% 55%;
-    --chart-3: 260 40% 40%;
-    --chart-4: 275 74% 66%;
-    --chart-5: 265 87% 67%;
+    --chart-1: 210 76% 61%;
+    --chart-2: 220 58% 55%;
+    --chart-3: 200 40% 40%;
+    --chart-4: 215 74% 66%;
+    --chart-5: 205 87% 67%;
 
     /* Sidebar variables */
-    --sidebar-background: 270 70% 30%; /* Darker Purple */
-    --sidebar-foreground: 270 80% 96%;
-    --sidebar-primary: 280 90% 65%; /* Brighter Violet for active items */
+    --sidebar-background: 210 70% 30%; /* Darker Blue */
+    --sidebar-foreground: 210 80% 96%;
+    --sidebar-primary: 220 90% 65%; /* Brighter Indigo/Blue for active items */
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 270 70% 45%;
+    --sidebar-accent: 210 70% 45%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 270 60% 40%;
-    --sidebar-ring: 280 90% 60%;
+    --sidebar-border: 210 60% 40%;
+    --sidebar-ring: 220 90% 60%;
   }
 
   .dark {
-    --background: 270 30% 10%; /* Deep Dark Purple */
-    --foreground: 270 80% 95%; /* Very Light Lilac tint for text */
+    --background: 210 30% 10%; /* Deep Dark Blue */
+    --foreground: 210 80% 95%; /* Very Light Blue tint for text */
 
-    --card: 270 35% 15%; /* Dark purple card */
-    --card-foreground: 270 80% 95%;
+    --card: 210 35% 15%; /* Dark blue card */
+    --card-foreground: 210 80% 95%;
 
-    --popover: 270 35% 15%;
-    --popover-foreground: 270 80% 95%;
+    --popover: 210 35% 15%;
+    --popover-foreground: 210 80% 95%;
 
-    --primary: 270 80% 65%; /* Brighter Purple for dark mode primary */
-    --primary-foreground: 270 100% 10%; /* Dark purple text on primary */
+    --primary: 210 80% 65%; /* Brighter Blue for dark mode primary */
+    --primary-foreground: 210 100% 10%; /* Dark blue text on primary */
 
-    --secondary: 270 40% 30%; /* Muted dark purple */
-    --secondary-foreground: 270 80% 95%;
+    --secondary: 210 40% 30%; /* Muted dark blue */
+    --secondary-foreground: 210 80% 95%;
 
-    --muted: 270 30% 20%; /* Darker, desaturated purple */
-    --muted-foreground: 270 50% 70%; /* Lighter desaturated purple text */
+    --muted: 210 30% 20%; /* Darker, desaturated blue */
+    --muted-foreground: 210 50% 70%; /* Lighter desaturated blue text */
 
-    --accent: 280 80% 60%; /* Brighter Violet for dark mode accent */
-    --accent-foreground: 280 100% 10%;
+    --accent: 220 80% 60%; /* Brighter Indigo/Blue for dark mode accent */
+    --accent-foreground: 220 100% 10%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 270 40% 30%; /* Dark purple-gray border */
-    --input: 270 40% 25%; /* Dark purple input background */
-    --ring: 270 80% 65%;
+    --border: 210 40% 30%; /* Dark blue-gray border */
+    --input: 210 40% 25%; /* Dark blue input background */
+    --ring: 210 80% 65%;
 
     /* Sidebar dark theme */
-    --sidebar-background: 270 30% 12%;
-    --sidebar-foreground: 270 70% 92%;
-    --sidebar-primary: 280 80% 65%;
+    --sidebar-background: 210 30% 12%;
+    --sidebar-foreground: 210 70% 92%;
+    --sidebar-primary: 220 80% 65%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 270 60% 30%;
+    --sidebar-accent: 210 60% 30%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 270 40% 25%;
-    --sidebar-ring: 280 80% 60%;
+    --sidebar-border: 210 40% 25%;
+    --sidebar-ring: 220 80% 60%;
   }
 }
 
@@ -108,8 +108,14 @@ body {
 
 /* Add subtle fade-in animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .fade-in-section {
