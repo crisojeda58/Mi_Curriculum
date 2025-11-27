@@ -10,7 +10,7 @@ interface CertificatesSectionProps {
 }
 
 const CertificatesSection: React.FC<CertificatesSectionProps> = async ({ id }) => {
-  const supabase = createClient();
+  const supabase = await createClient();
   const { data: certificates, error } = await supabase.from('certificates').select('*').order('id');
 
   if (error) {

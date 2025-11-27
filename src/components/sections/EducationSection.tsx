@@ -9,7 +9,7 @@ interface EducationSectionProps {
 }
 
 const EducationSection: React.FC<EducationSectionProps> = async ({ id }) => {
-  const supabase = createClient();
+  const supabase = await createClient();
   const { data: education, error } = await supabase.from('education').select('*').order('id');
 
   if (error) {
