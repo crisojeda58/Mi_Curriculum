@@ -20,6 +20,8 @@ export const metadata: Metadata = {
 
 import { SpotlightBackground } from "@/components/ui/spotlight-background";
 
+import LikeButton from "@/components/LikeButton";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,6 +32,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <SpotlightBackground />
         {children}
+        <LikeButton />
         <Toaster />
       </body>
     </html>
