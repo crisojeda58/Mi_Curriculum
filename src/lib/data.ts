@@ -8,8 +8,8 @@ export const personalInfo: PersonalInfo = {
   email: 'cris.ojeda.co@gmail.com',
   linkedinUrl: 'https://www.linkedin.com/in/cristian-ojeda-0ba76b326/',
   githubUrl: 'https://github.com/crisojeda58',
-  cvUrl: '/documents/Curriculum 2025.docx', // User should place their CV here
-  profileImageUrl: '/images/perfil.jpg',
+  cvUrl: 'https://bbqxfgwlsqxfujhxyiga.supabase.co/storage/v1/object/public/WebFiles/CV.2025.pdf', // User should place their CV here
+  profileImageUrl: 'https://bbqxfgwlsqxfujhxyiga.supabase.co/storage/v1/object/public/WebFiles/Imagen_de_WhatsApp_2025-10-15_a_las_09.37.13_08de0172_arvmiz.jpg',
   profileImageDataAiHint: 'profile student',
 };
 
