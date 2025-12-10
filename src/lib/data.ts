@@ -8,24 +8,7 @@ export const personalInfo: PersonalInfo = {
   email: 'cris.ojeda.co@gmail.com',
   linkedinUrl: 'https://www.linkedin.com/in/cristian-ojeda-0ba76b326/',
   githubUrl: 'https://github.com/crisojeda58',
-  cvUrl: 'https://bbqxfgwlsqxfujhxyiga.supabase.co/storage/v1/object/public/WebFiles/CV.2025.pdf', // User should place their CV here
+  cvUrl: 'https://bbqxfgwlsqxfujhxyiga.supabase.co/storage/v1/object/public/WebFiles/Cv2025.pdf', // User should place their CV here
   profileImageUrl: 'https://bbqxfgwlsqxfujhxyiga.supabase.co/storage/v1/object/public/WebFiles/Imagen_de_WhatsApp_2025-10-15_a_las_09.37.13_08de0172_arvmiz.jpg',
   profileImageDataAiHint: 'profile student',
 };
-
-export const skills: Skill[] = [
-  { id: '1', name: 'Python', proficiency: 60, icon: Code },
-  { id: '2', name: 'Kali-Linux', proficiency: 60, icon: Computer },
-  { id: '3', name: 'Git & GitHub', proficiency: 80, icon: Github },
-  { id: '4', name: 'C#', proficiency: 50, icon: Code },
-  { id: '5', name: 'Java', proficiency: 50, icon: Code },
-  { id: '6', name: 'Golang', proficiency: 20, icon: Code },
-  { id: '7', name: 'Firebase', proficiency: 60, icon: DraftingCompass },
-  { id: '8', name: 'Flutter', proficiency: 60, icon: DraftingCompass },
-  { id: '9', name: 'SQL (PostgreSQL, MySQL)', proficiency: 80, icon: Database },
-  { id: '10', name: 'TypeScript', proficiency: 50, icon: Code },
-  { id: '11', name: 'JavaScript', proficiency: 40, icon: Code },
-  { id: '12', name: 'React', proficiency: 30, icon: Code },
-  { id: '13', name: 'HTML5', proficiency: 90, icon: Code },
-  { id: '14', name: 'CSS3, Bootstrap, Tailwind', proficiency: 85, icon: Paintbrush },
-];
