@@ -1,4 +1,5 @@
-import { createClient } from '@/lib/supabase/server';
+import { db } from '@/lib/firebase';
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { Progress } from '@/components/ui/progress';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Wrench, Code, Computer, Github, DraftingCompass, Database, Paintbrush } from 'lucide-react';
@@ -20,10 +21,12 @@ interface SkillsSectionProps {
 }
 
 const SkillsSection: React.FC<SkillsSectionProps> = async ({ id }) => {
-  const supabase = await createClient();
-  const { data: skills, error } = await supabase.from('skills').select('*').order('proficiency', { ascending: false });
-
-  if (error) {
+  let skills: Skill[] = [];
+  try {
+    const q = query(collection(db, 'skills'), orderBy('proficiency', 'desc'));
+    const querySnapshot = await getDocs(q);
+    skills = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as unknown as Skill));
+  } catch (error) {
     console.error('Error fetching skills data:', error);
   }
 
@@ -43,7 +46,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = async ({ id }) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle icon={Wrench} title="Habilidades Técnicas" subtitle="Un resumen de las tecnologías y herramientas que manejo." />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {(skills as Skill[]).map((skill) => {
+          {skills.map((skill) => {
             const IconComponent = skill.icon_name ? iconMap[skill.icon_name] : Wrench;
             
             return (

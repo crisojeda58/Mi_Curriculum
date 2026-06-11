@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { createClient } from '@/lib/supabase/server';
+import { db } from '@/lib/firebase';
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { GraduationCap, CalendarDays } from 'lucide-react';
 import SectionTitle from './SectionTitle';
 import type { Education } from '@/lib/types';
@@ -9,14 +10,16 @@ interface EducationSectionProps {
 }
 
 const EducationSection: React.FC<EducationSectionProps> = async ({ id }) => {
-  const supabase = await createClient();
-  const { data: education, error } = await supabase.from('education').select('*').order('id');
-
-  if (error) {
+  let education: Education[] = [];
+  try {
+    const q = query(collection(db, 'education'), orderBy('id'));
+    const querySnapshot = await getDocs(q);
+    education = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as unknown as Education));
+  } catch (error) {
     console.error('Error fetching education data:', error);
   }
 
-  if (!education) {
+  if (!education || education.length === 0) {
     return (
         <section id={id} className="py-16 md:py-24 bg-background">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,7 +35,7 @@ const EducationSection: React.FC<EducationSectionProps> = async ({ id }) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle icon={GraduationCap} title="Formación Académica" subtitle="Mi trayectoria académica y títulos obtenidos." />
         <div className="space-y-8">
-          {education.map((edu: Education) => (
+          {education.map((edu) => (
             <Card key={edu.id} className="shadow-md hover:shadow-lg transition-shadow duration-300">
               <CardHeader>
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">

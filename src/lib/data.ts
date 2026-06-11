@@ -8,7 +8,7 @@ export const personalInfo: PersonalInfo = {
   email: 'cris.ojeda.co@gmail.com',
   linkedinUrl: 'https://www.linkedin.com/in/cristian-ojeda-0ba76b326/',
   githubUrl: 'https://github.com/crisojeda58',
-  cvUrl: 'https://bbqxfgwlsqxfujhxyiga.supabase.co/storage/v1/object/public/WebFiles/Cv2025.pdf', // User should place their CV here
-  profileImageUrl: 'https://bbqxfgwlsqxfujhxyiga.supabase.co/storage/v1/object/public/WebFiles/Imagen_de_WhatsApp_2025-10-15_a_las_09.37.13_08de0172_arvmiz.jpg',
+  cvUrl: 'https://firebasestorage.googleapis.com/v0/b/mi-curriculum-cfc22.firebasestorage.app/o/WebFiles%2FCv2025.pdf?alt=media&token=197cee77-fdfd-414e-97d1-5cd4cb971380',
+  profileImageUrl: 'https://firebasestorage.googleapis.com/v0/b/mi-curriculum-cfc22.firebasestorage.app/o/WebFiles%2FImagen_de_WhatsApp_2025-10-15_a_las_09.37.13_08de0172_arvmiz.jpg?alt=media&token=bce1c2bc-2301-4db4-ab21-058324c74e57',
   profileImageDataAiHint: 'profile student',
 };
