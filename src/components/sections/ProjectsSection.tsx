@@ -2,7 +2,8 @@ import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { createClient } from '@/lib/supabase/server';
+import { db } from '@/lib/firebase';
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { ExternalLink, Briefcase } from 'lucide-react';
 import Link from 'next/link';
 import SectionTitle from './SectionTitle';
@@ -13,10 +14,12 @@ interface ProjectsSectionProps {
 }
 
 const ProjectsSection: React.FC<ProjectsSectionProps> = async ({ id }) => {
-  const supabase = await createClient();
-  const { data: projects, error } = await supabase.from('projects').select('*').order('id');
-
-  if (error) {
+  let projects: Project[] = [];
+  try {
+    const q = query(collection(db, 'projects'), orderBy('id'));
+    const querySnapshot = await getDocs(q);
+    projects = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as unknown as Project));
+  } catch (error) {
     console.error('Error fetching projects data:', error);
   }
 
@@ -36,7 +39,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = async ({ id }) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle icon={Briefcase} title="Proyectos Destacados" subtitle="Una selección de proyectos en los que he trabajado, demostrando mis habilidades y pasión por el desarrollo." />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {(projects as Project[]).map((project) => (
+          {projects.map((project) => (
             <Link href={project.github_url || '#'} key={project.id} target="_blank" rel="noopener noreferrer" className="block">
               <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
                 {project.image_url && (

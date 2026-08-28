@@ -1,7 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { createClient } from "@/lib/supabase/client"
+import { db } from "@/lib/firebase"
+import { doc, onSnapshot, updateDoc, increment } from "firebase/firestore"
 import { Heart } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
@@ -10,52 +11,25 @@ export default function LikeButton() {
   const [likes, setLikes] = useState<number>(0)
   const [hasLiked, setHasLiked] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
-  const supabase = createClient()
 
   useEffect(() => {
     // Check local storage
     const liked = localStorage.getItem("hasLiked") === "true"
     setHasLiked(liked)
 
-    // Fetch initial likes
-    fetchLikes()
-
     // Subscribe to changes for real-time updates
-    const channel = supabase
-      .channel('schema-db-changes')
-      .on(
-        'postgres_changes',
-        {
-          event: 'UPDATE',
-          schema: 'public',
-          table: 'website_stats',
-          filter: 'id=eq.global'
-        },
-        (payload) => {
-          if (payload.new && typeof payload.new.likes === 'number') {
-            setLikes(payload.new.likes)
-          }
-        }
-      )
-      .subscribe()
+    const docRef = doc(db, 'website_stats', 'global')
+    const unsubscribe = onSnapshot(docRef, (docSnap) => {
+      if (docSnap.exists()) {
+        setLikes(docSnap.data().likes || 0)
+      }
+      setIsLoading(false)
+    })
 
     return () => {
-      supabase.removeChannel(channel)
+      unsubscribe()
     }
   }, [])
-
-  const fetchLikes = async () => {
-    const { data, error } = await supabase
-      .from('website_stats')
-      .select('likes')
-      .eq('id', 'global')
-      .single()
-
-    if (data) {
-      setLikes(data.likes)
-    }
-    setIsLoading(false)
-  }
 
   const handleLike = async () => {
     if (hasLiked) return
@@ -65,9 +39,10 @@ export default function LikeButton() {
     setHasLiked(true)
     localStorage.setItem("hasLiked", "true")
 
-    const { error } = await supabase.rpc('increment_likes')
-
-    if (error) {
+    try {
+      const docRef = doc(db, 'website_stats', 'global')
+      await updateDoc(docRef, { likes: increment(1) })
+    } catch (error) {
       console.error('Error liking:', error)
       // Revert if error
       setLikes(prev => prev - 1)
