@@ -8,9 +8,9 @@ Bienvenido a mi portafolio profesional, una aplicación web moderna y dinámica 
 
 - **Diseño Moderno y Responsivo:** Interfaz construida con **Next.js 15** y **Tailwind CSS**, adaptada perfectamente a cualquier dispositivo.
 - **Componentes UI Premium:** Implementación de **Shadcn UI** y **Radix UI** para ofrecer componentes accesibles, consistentes y elegantes.
-- **Backend Híbrido & Potente:** Integración robusta con **Firebase** y **Supabase** para una gestión eficiente de datos, autenticación y almacenamiento.
-- **Inteligencia Artificial:** Funcionalidades potenciadas por **Genkit** de Google, explorando el futuro del desarrollo web con IA.
-- **Performance Optimizado:** Uso de las últimas características de React 19 y Next.js para una carga rápida y SEO amigable.
+- **Backend en la Nube:** Integración robusta con **Firebase** (Firestore y Cloud Storage) para una gestión eficiente de datos e imágenes.
+- **Animaciones Suaves:** Microinteracciones y animaciones fluidas utilizando **Framer Motion**.
+- **Performance Optimizado:** Uso de las últimas características de React 19 y Next.js para una carga ultrarrápida y optimización SEO.
 
 ## 🛠️ Stack Tecnológico
 
@@ -18,50 +18,51 @@ Este proyecto utiliza una arquitectura moderna basada en:
 
 - **Frontend:** [Next.js 15](https://nextjs.org/) (App Router), [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/).
 - **Estilos:** [Tailwind CSS](https://tailwindcss.com/), [Shadcn UI](https://ui.shadcn.com/), [Lucide React](https://lucide.dev/) (Iconos).
-- **Backend & Servicios:**
-  - [Firebase](https://firebase.google.com/): Configuración base y servicios en la nube.
-  - [Supabase](https://supabase.com/): Base de datos PostgreSQL y autenticación.
-- **AI:** [Genkit](https://firebase.google.com/docs/genkit): SDK de IA para desarrolladores.
+- **Backend & Almacenamiento:** [Firebase](https://firebase.google.com/) (Cloud Firestore & Cloud Storage).
+- **Gestor de Paquetes:** [pnpm](https://pnpm.io/).
 - **Despliegue:** [Vercel](https://vercel.com/): Hosting y CI/CD automatizado.
 
 ## 🚀 Cómo empezar localmente
 
 Si deseas ejecutar este proyecto en tu entorno local para desarrollo o pruebas:
 
-1.  **Clonar el repositorio:**
+1. **Clonar el repositorio:**
 
-    ```bash
-    git clone https://github.com/crisojeda58/Mi_Curriculum.git
-    cd Mi_Curriculum
-    ```
+   ```bash
+   git clone https://github.com/crisojeda58/Mi_Curriculum.git
+   cd Mi_Curriculum
+   ```
 
-2.  **Instalar dependencias:**
+2. **Instalar dependencias:**
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   pnpm install
+   ```
 
-3.  **Configurar variables de entorno:**
-    Necesitarás crear un archivo `.env.local` en la raíz del proyecto con las credenciales de tus servicios (Supabase/Firebase).
+3. **Configurar variables de entorno:**
+   Crea un archivo `.env` o `.env.local` en la raíz del proyecto con las credenciales de Firebase:
 
-    ```env
-    NEXT_PUBLIC_SUPABASE_URL=tu_supabase_url
-    NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_supabase_anon_key
-    # ... Agrega aquí tus otras claves de Firebase si son necesarias
-    ```
+   ```env
+   NEXT_PUBLIC_FIREBASE_API_KEY=tu_api_key
+   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=tu_auth_domain
+   NEXT_PUBLIC_FIREBASE_PROJECT_ID=tu_project_id
+   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=tu_storage_bucket
+   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=tu_sender_id
+   NEXT_PUBLIC_FIREBASE_APP_ID=tu_app_id
+   NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=tu_measurement_id
+   ```
 
-4.  **Ejecutar el servidor de desarrollo:**
-    ```bash
-    npm run dev
-    ```
-    Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
+4. **Ejecutar el servidor de desarrollo:**
+   ```bash
+   pnpm run dev
+   ```
+   Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
 
 ## 📂 Estructura del Proyecto
 
-- `src/app`: Contiene las rutas, páginas y layouts (App Router).
-- `src/components`: Biblioteca de componentes reutilizables y secciones de la página.
-- `src/lib`: Utilidades, tipos y configuraciones de clientes (Firebase/Supabase).
-- `src/ai`: Lógica e integraciones relacionadas con Genkit AI.
+- `src/app`: Rutas, páginas y layouts (App Router de Next.js).
+- `src/components`: Componentes reutilizables, elementos de Shadcn UI y secciones del portafolio.
+- `src/lib`: Configuración de Firebase, tipos de TypeScript y utilidades generales.
 
 ## 📬 Contacto
 
@@ -70,4 +71,3 @@ Si deseas ejecutar este proyecto en tu entorno local para desarrollo o pruebas:
 - **LinkedIn:** [Cristian Ojeda](https://www.linkedin.com/in/cristian-ojeda-0ba76b326/)
 - **GitHub:** [@crisojeda58](https://github.com/crisojeda58)
 
----
