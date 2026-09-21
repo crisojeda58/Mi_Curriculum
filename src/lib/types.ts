@@ -23,7 +23,7 @@ export interface Skill {
   name: string;
   proficiency: number; // 0-100
   icon?: React.ElementType;
-  icon_name?: string; // For Supabase
+  icon_name?: string;
 }
 
 export interface PersonalInfo {
