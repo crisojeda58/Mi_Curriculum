@@ -1,9 +1,14 @@
 rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
+    // Función para verificar si el usuario autenticado es el administrador
+    function isAdmin() {
+      return request.auth != null && request.auth.token.email == "cris.ojeda.co@gmail.com";
+    }
+
     match /{allPaths=**} {
-      allow read: if true; // Cualquiera puede ver/descargar el CV y la foto
-      allow write: if false; // Solo tú puedes subir desde la consola de Firebase
+      allow read: if true; // Lectura pública para imágenes y CV
+      allow write: if isAdmin(); // Solo tú puedes subir o modificar archivos
     }
   }
 }

@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 };
 
 import { SpotlightBackground } from "@/components/ui/spotlight-background";
-
 import LikeButton from "@/components/LikeButton";
+import { AuthProvider } from "@/context/AuthContext";
 
 export default function RootLayout({
   children,
@@ -30,10 +30,12 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <SpotlightBackground />
-        {children}
-        <LikeButton />
-        <Toaster />
+        <AuthProvider>
+          <SpotlightBackground />
+          {children}
+          <LikeButton />
+          <Toaster />
+        </AuthProvider>
       </body>
     </html>
   );

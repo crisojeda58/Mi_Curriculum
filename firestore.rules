@@ -1,13 +1,18 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Por defecto, lectura pública y escritura denegada (para proteger tu info)
+    // Función para verificar si el usuario autenticado es el administrador
+    function isAdmin() {
+      return request.auth != null && request.auth.token.email == "cris.ojeda.co@gmail.com";
+    }
+
+    // Por defecto, lectura pública y escritura solo para el administrador
     match /{document=**} {
       allow read: if true;
-      allow write: if false;
+      allow write: if isAdmin();
     }
     
-    // PERO permitimos escritura al documento de "likes" para que cualquiera pueda dar like
+    // Permitimos escritura al documento de "likes" para que cualquier visitante pueda dar like
     match /website_stats/global {
       allow write: if true;
     }

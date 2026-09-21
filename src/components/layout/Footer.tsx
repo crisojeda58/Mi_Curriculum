@@ -18,7 +18,10 @@ const Footer = () => {
           </Link>
         </div>
         <p className="text-sm">
-          &copy; {new Date().getFullYear()} {personalInfo.name}. Todos los derechos reservados.
+          &copy; {new Date().getFullYear()} {personalInfo.name}. Todos los derechos reservados.{' '}
+          <Link href="/admin" className="hover:text-primary transition-colors text-xs opacity-40 hover:opacity-100">
+            Admin
+          </Link>
         </p>
       </div>
     </footer>
