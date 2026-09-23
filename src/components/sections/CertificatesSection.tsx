@@ -13,9 +13,15 @@ interface CertificatesSectionProps {
 const CertificatesSection: React.FC<CertificatesSectionProps> = async ({ id }) => {
   let certificates: Certificate[] = [];
   try {
-    const q = query(collection(db, 'certificates'), orderBy('id'));
+    const q = query(collection(db, 'certificates'));
     const querySnapshot = await getDocs(q);
     certificates = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as unknown as Certificate));
+    // Ordenar por issue_date descendente (más recientes primero)
+    certificates.sort((a, b) => {
+      const dateA = a.issue_date || '';
+      const dateB = b.issue_date || '';
+      return dateB.localeCompare(dateA);
+    });
   } catch (error) {
     console.error('Error fetching certificates data:', JSON.stringify(error, null, 2));
   }

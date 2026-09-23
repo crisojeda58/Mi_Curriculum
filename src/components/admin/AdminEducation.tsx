@@ -23,6 +23,13 @@ export default function AdminEducation() {
     try {
       const snap = await getDocs(collection(db, 'education'));
       const list = snap.docs.map(d => ({ id: d.id, ...d.data() } as unknown as Education));
+      list.sort((a, b) => {
+        const endA = (a.end_date || '').toLowerCase();
+        const endB = (b.end_date || '').toLowerCase();
+        if (endA === 'presente' || endA === 'actualidad') return -1;
+        if (endB === 'presente' || endB === 'actualidad') return 1;
+        return endB.localeCompare(endA);
+      });
       setEducationList(list);
     } catch (error) {
       console.error('Error al obtener educación:', error);

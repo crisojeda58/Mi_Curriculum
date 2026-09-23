@@ -25,6 +25,11 @@ export default function AdminCertificates() {
     try {
       const snap = await getDocs(collection(db, 'certificates'));
       const list = snap.docs.map(d => ({ ...d.data(), id: d.id } as unknown as Certificate));
+      list.sort((a, b) => {
+        const dateA = a.issue_date || '';
+        const dateB = b.issue_date || '';
+        return dateB.localeCompare(dateA);
+      });
       setCertificates(list);
     } catch (error) {
       console.error('Error al obtener certificados:', error);
