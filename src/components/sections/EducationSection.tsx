@@ -12,9 +12,17 @@ interface EducationSectionProps {
 const EducationSection: React.FC<EducationSectionProps> = async ({ id }) => {
   let education: Education[] = [];
   try {
-    const q = query(collection(db, 'education'), orderBy('id'));
+    const q = query(collection(db, 'education'));
     const querySnapshot = await getDocs(q);
     education = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as unknown as Education));
+    // Ordenar por end_date descendente (más recientes primero, 'Presente' arriba)
+    education.sort((a, b) => {
+      const endA = (a.end_date || '').toLowerCase();
+      const endB = (b.end_date || '').toLowerCase();
+      if (endA === 'presente' || endA === 'actualidad') return -1;
+      if (endB === 'presente' || endB === 'actualidad') return 1;
+      return endB.localeCompare(endA);
+    });
   } catch (error) {
     console.error('Error fetching education data:', error);
   }
